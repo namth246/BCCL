@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<p id="result">RUNNING</p>
+<canvas id="canvas" width="240" height="120"></canvas>
+<script src="../js/logo-data.js"></script>
+<script>
+  const canvas = document.querySelector('#canvas');
+  const logo = new Image();
+  logo.onload = () => {
+    try {
+      canvas.getContext('2d').drawImage(logo, 0, 0, 210, 120);
+      canvas.toBlob(blob => document.querySelector('#result').textContent = blob ? 'PASS' : 'FAIL', 'image/png');
+    } catch (error) {
+      document.querySelector('#result').textContent = `FAIL:${error.name}`;
+    }
+  };
+  logo.onerror = () => document.querySelector('#result').textContent = 'FAIL:image';
+  logo.src = LOGO_DATA_URI;
+</script>

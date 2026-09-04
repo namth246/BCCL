@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CNF Strategic Weekly Report Engine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#preview">Đi tới bản xem trước</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Nhập dữ liệu báo cáo">
+      <header><p class="eyebrow">CNF DATA CENTER</p><h1>Strategic Weekly Report</h1><p class="muted">Nhập liệu · Render · Xuất PNG</p></header>
+      <form id="report-form" novalidate></form>
+      <div class="actions"><button type="button" id="update-market-button">Cập nhật dữ liệu</button><button class="primary" type="button" id="render-button">Render báo cáo</button><button type="button" id="export-button" disabled>Xuất PNG</button><button type="button" id="import-button">Nhập JSON</button><button type="button" id="download-button">Tải JSON</button><button type="button" id="sample-button">Khôi phục dữ liệu mẫu</button><input id="json-input" type="file" accept="application/json" hidden></div>
+      <p id="status" class="status" role="status" aria-live="polite">Sẵn sàng.</p>
+    </aside>
+    <main id="preview" class="preview"><canvas id="report-canvas" width="1920" height="1080" aria-label="Bản xem trước báo cáo chiến lược tuần CNF"></canvas></main>
+  </div>
+  <script src="js/config.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/logo-data.js"></script>
+  <script src="js/market-update.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/market-update-ui.js"></script>
+</body>
+</html>
