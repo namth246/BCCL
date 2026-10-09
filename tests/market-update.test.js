@@ -13,6 +13,7 @@ const current = {
 };
 const update = {
   indices: [{ name: 'VNINDEX' }], trading_value: '1,500', foreign_flow: [{ date: '25/08', value: 277 }],
+  top_buy: [{ ticker: 'VIC', value: 155 }], top_sell: [{ ticker: 'DXG', value: -119 }],
   meta: { updated_at: '04/09/2026', source: 'vnstock' },
 };
 
@@ -21,5 +22,7 @@ assert.strictEqual(merged.market_conclusion, 'Giữ nguyên');
 assert.strictEqual(merged.report.update_date, '04/09/2026');
 assert.strictEqual(merged.report.source, 'vnstock');
 assert.deepStrictEqual(merged.indices, update.indices);
+assert.deepStrictEqual(merged.top_buy, update.top_buy);
+assert.deepStrictEqual(merged.top_sell, update.top_sell);
 
 console.log('PASS: market update helpers preserve manual data');
